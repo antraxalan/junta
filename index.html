@@ -1,0 +1,277 @@
+
+<!DOCTYPE html>
+<html>
+<access origin="*" />
+<head>
+  <title>BUTCHERS</title>
+  <!-- <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; minimum-scale=1.0; user-scalable=no; target-densityDpi=device-dpi" /> -->
+  <meta name="format-detection" content="telephone=no" />
+  <meta name="msapplication-tap-highlight" content="no" />
+  <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=medium-dpi" />
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="jquery.mobile-1.2.0.min.css" />
+  <link rel="stylesheet" href="jquery-mobile-fluid960.css.css" />
+  <script type="text/javascript" src="jquery-1.8.3.js"></script>
+  <script src="jquery.mobile-1.2.0.min.js"></script>
+  <script src="jquery.timeago.js"></script>
+  <script src="waypoints.min.js"></script>
+  <!-- <script src="childbrowser.js"></script> -->
+  <link rel="icon" href="icon.png">
+</head>
+<style type="text/css">
+  #index {
+    /*background: url(corona1.jpg);*/
+    /*background-repeat:repeat-y;
+    background-position:center center;
+    background-attachment:scroll;
+    background-size:100% 100%;*/
+
+/*    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-size:100% 100%;*/
+
+   /* background-repeat:no-repeat;
+    background-position:bottom center;
+    background-size:cover;  
+    background-size: 100%;*/
+  }
+  .ui-page {
+    background: transparent;
+  }
+  .ui-content{
+    background: transparent;
+  }
+
+
+
+/*#index {
+    background-color:teal;
+    -webkit-transition: background-color 1000ms linear;
+    -moz-transition: background-color 1000ms linear;
+    -o-transition: background-color 1000ms linear;
+    -ms-transition: background-color 1000ms linear;
+    transition: background-color 1000ms linear;
+}
+
+@media only screen
+and (min-device-width : 768px)
+and (max-device-width : 1024px) {
+    #index {
+        background-color:yellow;
+    }
+}
+
+@media only screen
+and (min-device-width : 768px)
+and (max-device-width : 1024px)
+and (orientation : landscape) {
+    #index {
+        background-color:orange;
+    }
+}
+
+@media only screen
+and (min-device-width : 768px)
+and (max-device-width : 1024px)
+and (orientation : portrait) {
+    #index {
+        background-color:black;
+    }
+  }*/
+
+  @media screen and (orientation: portrait)
+  {
+   #index { 
+    background-image:url(1.jpg); 
+    background-repeat:no-repeat;
+    background-position:bottom center;
+    background-size:cover;  
+    background-size: 100%;
+  }
+}
+@media screen and (orientation: landscape)
+{
+ #index { 
+  background-image:url(2.jpg); 
+  /*background-image:url(corona1.jpg); */
+  /*background-repeat:no-repeat;*/
+  /*background-position:bottom center;*/
+  /*background-size:cover;  */
+  background-size: 100%;
+
+}
+}
+
+.conexion {
+  -moz-box-shadow:inset 0px 0px 15px 3px #1C1C1C;
+  -webkit-box-shadow:inset 0px 0px 15px 3px #1C1C1C;
+  box-shadow:inset 0px 0px 15px 3px #1C1C1C;
+  background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #2A2A2A), color-stop(1, #404040));
+  background:-moz-linear-gradient(top, #2A2A2A 5%, #404040 100%);
+  background:-webkit-linear-gradient(top, #2A2A2A 5%, #404040 100%);
+  background:-o-linear-gradient(top, #2A2A2A 5%, #404040 100%);
+  background:-ms-linear-gradient(top, #2A2A2A 5%, #404040 100%);
+  background:linear-gradient(to bottom, #2A2A2A 5%, #404040 100%);
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#2A2A2A', endColorstr='#404040',GradientType=0);
+  background-color:#2A2A2A;
+  -moz-border-radius:17px;
+  -webkit-border-radius:17px;
+  border-radius:17px;
+  border:1px solid #1f2f47;
+  display:inline-block;
+  /*cursor:pointer;*/
+  color:#ffffff;
+  font-family:Arial;
+  font-size:15px;
+  padding:6px 13px;
+  text-decoration:none;
+  text-shadow:0px 1px 0px #263666;
+}
+
+*
+{
+-webkit-user-select: none;
+-khtml-user-select: none;
+-moz-user-select: none;
+-ms-user-select: none;
+user-select: none;
+}
+
+*{
+-webkit-user-drag: none;
+-moz-user-drag: none;
+-ms-user-drag: none;
+user-drag: none;
+}
+
+/* iphone para q no salga un popup al sostener un tap en <a> */
+*
+{
+-webkit-touch-callout: none;
+-moz-touch-callout: none;
+-ms-touch-callout: none;
+touch-callout: none;
+}
+
+</style>
+<body>
+  <div data-role="page" id="index">
+    <div data-theme="a" data-role="header">
+     <h3>
+      BUTCHERS
+    </h3>
+
+  </div>
+  <div align="center">
+    <div class="conexion contador" style="font-size: 20px"></div>
+  </div>
+  <div data-role="content" id="check-connection" align="center"> 
+    <div class="conexion">Sin Conexión.</div>
+    <a data-role="button" >Volver a validar la conexión.</a>
+
+  </div>
+  <div data-theme="a" data-role="footer" data-position="fixed"></div>
+</div>
+
+
+<div data-role="page" id="butchers" >
+<iframe id="cuadro_butchers" src="http://192.168.0.130/juntaaccionistas/valida_codigo2.php" style="border: 0;  width: 100%;">Error.</iframe>
+</div>
+
+
+</body>
+<script type="text/javascript">
+  var connectionStatus = false;
+
+  $(document).on('pagebeforeshow', '#index', function () {
+    $('#check-connection').hide();
+    setInterval(function () {
+      connectionStatus = navigator.onLine ? 'online' : 'offline';
+    }, 100);
+    function cambiar_height() {
+      $("#cuadro_butchers").css("height","800");
+      // alert("111");
+    }
+    function valida_online () {
+      // alert(connectionStatus);   
+      if(connectionStatus=='online'){
+        // alert("ok");
+        // window.location.href = "detalles.html";
+        // alert("cambio");
+        // src="https://www.butchers-cbba.com/ordering/restaurant/menu?restaurant_uid=161bf5eb-2d4d-4365-aa0e-45512a6ce6b7&client_is_mobile=true&glfa_cid=1547340812.1529714508&glfa_t=1529714580185"
+        $('#butchers').attr('src', $('#butchers').attr('src'));
+        window.location.href = "index.html#butchers";
+        // var iframe = document.getElementById('#butchers');
+        // iframe.src = iframe.src;
+
+        $("#cuadro_butchers").css("height","800");
+        // setTimeout(cambiar_height, 500);
+        // $('#index').fadeOut(800);
+        // $('#'+idsec).fadeIn(800);
+
+        // window.location.replace("https://www.butchers-cbba.com/ordering/restaurant/menu?restaurant_uid=161bf5eb-2d4d-4365-aa0e-45512a6ce6b7&client_is_mobile=true&glfa_cid=1547340812.1529714508&glfa_t=1529714580185");
+        // window.location.href = "https://www.butchers-cbba.com/ordering/restaurant/menu?restaurant_uid=161bf5eb-2d4d-4365-aa0e-45512a6ce6b7&client_is_mobile=true&glfa_cid=1547340812.1529714508&glfa_t=1529714580185";
+
+
+      }else{
+        // alert("ok");
+        alert("Sin conexion.");
+        $('#check-connection').show(300);
+      }
+    }
+    setTimeout(valida_online, 5000);
+
+    $(document).on('click', '#check-connection', function () {
+      valida_online();
+    });
+    $('.contador').show();
+    var counter = 3;
+    var myInterval = setInterval(function () {
+      --counter;
+      $('.contador').text(counter);
+      if(counter=='0'){
+        // alert("stop");
+        clearInterval(myInterval);
+        $('.contador').hide();
+      }
+    }, 1000);
+
+
+  });
+</script>
+</html>
+
+
+
+
+
+
+
+
+<!-- <html>
+<head>
+  <script type="text/javascript" src="jquery.js"></script>
+  <script type="text/javascript" src="jquery-1.10.2.js"></script>
+  <script type="text/javascript">
+   jQuery(document).ready(function($) {
+    // jQuery("#content").load("http://www.cbn.com.bo/webpedidos/");
+    $.ajax({
+        crossOrigin: true,
+        url: "http://www.cbn.com.bo/webpedidos/",
+        success: function(data) {
+            console.log(data);
+        }
+    });
+   });
+
+ </script>
+ <link rel="stylesheet" type="text/css" href="stylesheet.css">
+</head>
+<body>
+  
+   
+ 
+</body>
+</html> -->
